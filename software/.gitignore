@@ -1,6 +1,0 @@
-.cache
-.cmake_build_release
-.cmake_build_debug
-src/cov.xml
-*.gcov
-
