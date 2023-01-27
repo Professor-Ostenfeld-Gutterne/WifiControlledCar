@@ -3,7 +3,7 @@ on: [pull_request]
 jobs:
   cppcheck:
     container:
-      image: ghcr.io/neocortec/neo.corepp:1.3
+      image: unknown
       options: --user=1000:1000
     runs-on: [ self-hosted, builder ]
     steps:

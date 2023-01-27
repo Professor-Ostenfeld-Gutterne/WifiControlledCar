@@ -9,7 +9,7 @@ on: [push]
 jobs:
   clang-tidy:
     container:
-      image: ghcr.io/neocortec/neo.corepp:1.3
+      image: unknown
     runs-on: [ self-hosted, builder ]
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
