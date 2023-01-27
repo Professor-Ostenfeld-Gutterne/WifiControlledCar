@@ -5,6 +5,10 @@ ARG DEBIAN_FRONTEND=nointeractive
 RUN apt-get update \
   && apt install -y -q \
   cmake \
+  clang-format \
+  clang-tidy \
+  clangd \
+  cppcheck \
   git \
   hwdata \
   libglib2.0-0 \
@@ -28,6 +32,8 @@ RUN wget --no-verbose ${QEMU_URL} \
   && echo "${QEMU_SHA256} *${QEMU_DIST}" | sha256sum --check --strict - \
   && tar -xf $QEMU_DIST -C /opt \
   && rm ${QEMU_DIST}
+
+  
 
 ENV PATH=/opt/qemu/bin:${PATH}
 

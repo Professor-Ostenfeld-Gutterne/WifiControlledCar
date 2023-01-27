@@ -1,0 +1,21 @@
+name: Check code with clang-tidy
+on: [push]
+# on:
+#   workflow_run:
+#     workflows: ["Build release target", "Build debug target"]
+#     types: [completed]
+#     branches:
+#       - '**'
+jobs:
+  clang-tidy:
+    container:
+      image: unknown
+    runs-on: [ self-hosted, builder ]
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - name: Checkout branch ${{ github.ref }} of repository ${{ github.repository }}."
+        uses: actions/checkout@v3
+        with:
+          lfs: 'true'
+      - name: Perform clang-tidy check
+        run:  cd software && ./cmake_build_release.sh && run-clang-tidy src
