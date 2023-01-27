@@ -8,6 +8,7 @@ RUN apt-get update \
   clang-format \
   clang-tidy \
   clangd \
+  cppcheck \
   git \
   hwdata \
   libglib2.0-0 \
